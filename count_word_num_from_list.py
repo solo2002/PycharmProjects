@@ -15,20 +15,22 @@ for word in all_tokens:
     else:
         word_counter[word] = 1
 popular_words = sorted(word_counter, key = word_counter.get, reverse=True)
-top_word_set = popular_words[:3]
-print popular_words
+top_word_set = popular_words[:4]
+print 'top_word_set', top_word_set
 
-new_str = 'this is new str and test it'
+new_str = 'this is new str and test it this this this'
 new_tokens = new_str.split()#nltk.word_tokenize(new_str)
 
 
-word_dict = {}
+word_dict = dict.fromkeys(top_word_set, 0)
+print word_dict
 for w in new_tokens:
     if w in top_word_set:
-        if w in word_dict.keys():
-            word_dict[w] = word_dict[w] + 1
-        else:
-            word_dict[w] = 1
+        word_dict[w] += 1
+
+
+
+
 print word_dict
 
 #print fdist['this']
