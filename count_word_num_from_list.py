@@ -7,7 +7,7 @@ all_tokens = nltk.word_tokenize(all_str.lower()) #list
 text = nltk.Text(all_tokens)
 
 fdist = FreqDist(text)
-
+#fdist.plot()
 word_counter = {}
 for word in all_tokens:
     if word in word_counter:
@@ -28,15 +28,35 @@ for w in new_tokens:
     if w in top_word_set:
         word_dict[w] += 1
 
-
-
-
 print word_dict
 
 #print fdist['this']
 
 
+1. create a Repo at github
+2. at local directory:
+git init
+git add .
+git commit -m "Initialize Project"
+git remote add origin "... "//copy from github repo
+git push origin master //enter username and password
 
+//Add a Readme for this repo and "commit new file"
+...
+git remote -v//show two link
+git pull //the link showing above
+git push
+...
+//Add a tag
+git tag -a v1.0 -m "Version 1.0"
+git push origin v1.0 // could find at "release" panel in the repo at github
+
+...
+//clone repo from other's repo
+1. fork the repo
+2. mkdir newDirectoryName
+3. cd newDirectoryName
+4. git clone URL
 '''from nltk.corpus import movie_reviews
 import nltk
 
