@@ -1,5 +1,6 @@
 from sklearn import datasets
 from sklearn import svm
+import numpy as np
 
 iris = datasets.load_iris()
 # SVM
@@ -18,9 +19,19 @@ data =[[ 5.1,  3.5,  1.4,  0.2],
 ]
 clf.fit(data, target)
 print clf.predict([[ 5.0,  3.6,  1.3,  0.25]])
+# linear SVC
+svc = svm.SVC(kernel = 'linear')
+svc.fit(iris.data, iris.target)
 
 # KNN
 from sklearn import neighbors
 
 knn = neighbors.KNeighborsClassifier()
 knn.fit(iris.data, iris.target)
+print knn.predict([[0.1, 0.2, 0.3, 0.4]])
+
+perm = np.random.permutation(iris.target.size)
+iris.data = iris.data[perm]
+iris.target = iris.target[perm]
+knn.fit(iris.data[:100], iris.target[:100])
+print knn.score(iris.data[100:], iris.target[100:])

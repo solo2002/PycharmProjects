@@ -1,5 +1,6 @@
 from nltk.probability import FreqDist
 import nltk
+
 #from nltk.book import *
 all_str = 'This is str 1  this is str 2  and here is 3'
 all_tokens = nltk.word_tokenize(all_str.lower()) #list
