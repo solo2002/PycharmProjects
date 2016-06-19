@@ -35,3 +35,19 @@ iris.data = iris.data[perm]
 iris.target = iris.target[perm]
 knn.fit(iris.data[:100], iris.target[:100])
 print knn.score(iris.data[100:], iris.target[100:])
+
+# unsupervised classification
+# k means
+from sklearn import cluster, datasets
+from sklearn import cluster, datasets
+k_means = cluster.KMeans(n_clusters=3)
+k_means.fit(iris.data)
+
+print(k_means.labels_[::10])
+print(iris.target[::10])
+
+# PCA
+from skearn import pca
+pca = decomposition.PCA(n_components = 2)
+pca.fit(iris.data)
+X = pca.transform(iris.data)
