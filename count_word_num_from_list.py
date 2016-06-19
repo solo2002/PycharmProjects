@@ -33,7 +33,7 @@ print word_dict
 #print fdist['this']
 
 
-1. create a Repo at github
+'''1. create a Repo at github
 2. at local directory:
 git init
 git add .
@@ -57,7 +57,7 @@ git push origin v1.0 // could find at "release" panel in the repo at github
 2. mkdir newDirectoryName
 3. cd newDirectoryName
 4. git clone URL
-'''from nltk.corpus import movie_reviews
+from nltk.corpus import movie_reviews
 import nltk
 
 documents = [(list(movie_reviews.words(fileid)), category)
