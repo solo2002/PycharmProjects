@@ -33,6 +33,8 @@ print word_dict
 
 #print fdist['this']
 
+listoflist = [['this', 'is'],['list']]
+print listoflist[0][1]
 
 '''1. create a Repo at github
 2. at local directory:
